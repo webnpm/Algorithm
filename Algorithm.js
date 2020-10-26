@@ -83,8 +83,41 @@ function monkeyKing(n,m){
 var monkey = monkeyKing(5,2);
 console.log(monkey);
 
+/*  
+	**
+	**1.3 移动多少盘子才能完成汉诺塔游戏
+	**
+
+*/
+
+function hanou(n,x,y,z){
+    if(n === 1){
+        console.log(`移动盘 1从 ${x} 到 ${z}`)
+    }else{
+        hanou(n - 1,x,z,y);
+        console.log(`移动盘 ${n}从 ${x} 到 ${z}`)
+        hanou(n - 1,y,x,z);
+    }
+}
 
 
+hanou(4,"A","B","C")
+
+// 移动盘 1从 A 到 B
+// 移动盘 2从 A 到 C
+// 移动盘 1从 B 到 C
+// 移动盘 3从 A 到 B
+// 移动盘 1从 C 到 A
+// 移动盘 2从 C 到 B
+// 移动盘 1从 A 到 B
+// 移动盘 4从 A 到 C
+// 移动盘 1从 B 到 C
+// 移动盘 2从 B 到 A
+// 移动盘 1从 C 到 A
+// 移动盘 3从 B 到 C
+// 移动盘 1从 A 到 B
+// 移动盘 2从 A 到 C
+// 移动盘 1从 B 到 C
 
 
 
